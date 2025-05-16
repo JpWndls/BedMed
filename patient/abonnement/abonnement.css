@@ -1,0 +1,216 @@
+/* ----- Général ----- */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #f0f8ff, #ffffff);
+    min-height: 100vh;
+}
+
+.logout-icon {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    font-size: 3.5rem;
+    color: #000000;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.logout-icon:hover {
+    transform: scale(1.2);
+    color: #000000;
+}
+
+/* ----- Header ----- */
+header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9f3ff;
+    padding: 10px 40px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    height: 100px;
+    margin-left: 220px;
+}
+
+.username {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #0d6efd;
+    animation: fadeInDown 1s ease-out;
+}
+
+/* ----- Sidebar ----- */
+.sidebar {
+    width: 220px;
+    height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+.sidebar img.logo {
+    width: 100px;
+}
+
+.sidebar .icon-btn {
+    background-color: #ffffff;
+    border-radius: 20%;
+    width: 120px;
+    height: 120px;
+    margin: 20px 0;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar .icon-btn img {
+    width: 90px;
+}
+
+.sidebar .chu-logo {
+    margin-top: auto;
+    width: 100px;
+}
+
+/* ----- Bordures des icônes ----- */
+.lit {
+    border: solid 3px #3586ff;
+}
+
+.maison {
+    border: solid 3px #ff00aa;
+}
+
+.tele {
+    border: solid 3px #28c700;
+}
+
+.alerte {
+    border: solid 3px #fd0d0d;
+}
+
+/* ----- Animation d’entrée ----- */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ----- Grille de forfaits ----- */
+.subscription-options {
+    margin-left: 220px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* ----- Carte uniforme ----- */
+.plan {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    padding: 25px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: transform 0.2s ease, border 0.2s ease;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* ----- Titres forfaits ----- */
+.plan h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #0d6efd;
+}
+
+/* ----- Descriptions ----- */
+.plan p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+/* ----- Bouton Sélectionner ----- */
+.select-btn {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.select-btn:active {
+    background-color: #0b5ed7;
+    transform: scale(0.98);
+}
+
+/* ----- État désactivé (gratuit) ----- */
+.select-btn.disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+/* ----- Popup de confirmation ----- */
+.confirm-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.confirm-box {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+    text-align: center;
+    max-width: 400px;
+    font-size: 1.1rem;
+}
+
+.confirm-box strong {
+    color: #dc3545;
+}
+
+.confirm-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
